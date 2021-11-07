@@ -1,0 +1,30 @@
+.header {
+  padding: 1.9rem 2.4rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header img {
+  cursor: pointer;
+}
+.header .left-side {
+  display: flex;
+  column-gap: 1.6rem;
+  align-items: center;
+}
+.header .right-side {
+  display: flex;
+  align-items: center;
+  column-gap: 2.218rem;
+}
+.header .cart:hover {
+  /* fill: var(--second-color); */
+}
+.header .avatar {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+.header .avatar:hover {
+  border: 0.2rem solid var(--first-color);
+  border-radius: 50%;
+}
