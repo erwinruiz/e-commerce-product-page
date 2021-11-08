@@ -8,6 +8,7 @@
   --fifth-color: #ffeee2;
   --sixth-color: #f6f8fd;
   --white-color: #ffffff;
+  --hover-color: #ffab6a;
 }
 
 html {
@@ -21,9 +22,11 @@ s *:after {
 }
 body {
   margin: 0;
+  font-size: 1.6rem;
   font-family: "Kumbh Sans", sans-serif;
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
 }
 
 /* Globals */

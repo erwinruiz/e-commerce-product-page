@@ -1,0 +1,105 @@
+.container {
+  padding: 2.4rem;
+}
+.company {
+  color: var(--first-color);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.185rem;
+  margin-bottom: 1.9rem;
+}
+.title {
+  color: var(--second-color);
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 3.2rem;
+  margin-bottom: 1.5rem;
+}
+.text {
+  color: var(--third-color);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2.5rem;
+  margin-bottom: 2.4rem;
+}
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+}
+.price .current {
+  display: flex;
+  align-items: center;
+  column-gap: 1.6rem;
+}
+.current .current-price {
+  color: var(--second-color);
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+.price .current .discount {
+  background-color: var(--fifth-color);
+  width: 5.1rem;
+  height: 2.7rem;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--first-color);
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.price .old-price {
+  color: var(--fourth-color);
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-decoration: line-through;
+}
+.controls {
+  background-color: var(--sixth-color);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5.6rem;
+  padding: 0 2.4rem;
+  margin-bottom: 1.6rem;
+}
+.controls svg:hover {
+  cursor: pointer;
+}
+.controls svg:hover use {
+  fill: var(--hover-color);
+}
+.controls .total-items {
+  color: var(--second-color);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.button {
+  height: 5.6rem;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--first-color);
+  font-family: "Kumbh Sans", sans-serif;
+  color: var(--white-color);
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1.554rem;
+  box-shadow: 0 2rem 5rem -2rem var(--first-color);
+  margin-bottom: 8.8rem;
+  transition: background-color 250ms ease;
+}
+.button svg path {
+  fill: var(--white-color);
+}
+.button:hover {
+  background-color: var(--hover-color);
+  cursor: pointer;
+}

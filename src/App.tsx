@@ -1,12 +1,12 @@
 import { Fragment } from "react";
-import Gallery from "./Components/Gallery";
 import Header from "./Components/Header";
+import Product from "./Components/Product/Product";
 
 function App() {
   return (
     <Fragment>
       <Header />
-      <Gallery />
+      <Product />
     </Fragment>
   );
 }

@@ -1,4 +1,6 @@
 .header {
+  max-width: 111rem;
+  margin: 0 auto;
   padding: 1.9rem 2.4rem 2.5rem;
   display: flex;
   align-items: center;
@@ -17,8 +19,11 @@
   align-items: center;
   column-gap: 2.218rem;
 }
-.header .cart:hover {
-  /* fill: var(--second-color); */
+.header svg:hover {
+  cursor: pointer;
+}
+.header svg:hover path {
+  fill: var(--second-color);
 }
 .header .avatar {
   height: 2.4rem;
