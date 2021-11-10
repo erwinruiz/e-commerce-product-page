@@ -1,0 +1,51 @@
+.backdrop {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  transition: all ease-in-out 250ms;
+}
+.backdrop-open {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.sidebar {
+  position: fixed;
+  z-index: 10;
+  background-color: var(--white-color);
+  height: 100%;
+  width: 25rem;
+  padding: 2.5rem;
+  transition: transform ease-in-out 250ms;
+  transform: translateX(-100%);
+}
+.open-sidebar {
+  transform: translateX(0);
+}
+.close-sidebar {
+  transform: translateX(-100%);
+}
+.sidebar svg {
+  margin-bottom: 5.378rem;
+  cursor: pointer;
+}
+.sidebar svg:hover path {
+  fill: var(--second-color);
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.sidebar a {
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+  color: var(--second-color);
+  text-decoration: none;
+}
