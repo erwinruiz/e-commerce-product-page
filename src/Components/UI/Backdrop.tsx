@@ -3,17 +3,22 @@ import classes from "./Backdrop.module.css";
 
 type BackdropProps = {
   isOpen: boolean;
-  closeMenu: () => void;
+  close: () => void;
+  needBgColor: boolean;
 };
 
-function Backdrop({ isOpen, closeMenu }: BackdropProps) {
-  const content = (
-    <div
-      className={`${classes.backdrop} 
-          ${isOpen ? classes["backdrop-open"] : ""}`}
-      onClick={closeMenu}
-    ></div>
-  );
+function Backdrop({ isOpen, close, needBgColor }: BackdropProps) {
+  let backdropClasses;
+
+  if (needBgColor) {
+    backdropClasses = `${classes.backdrop} ${
+      isOpen ? classes["background-color"] : ""
+    }`;
+  } else {
+    backdropClasses = `${classes.backdrop}`;
+  }
+
+  const content = <div className={backdropClasses} onClick={close}></div>;
 
   return (
     <>

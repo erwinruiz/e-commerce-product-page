@@ -1,0 +1,78 @@
+.cart {
+  position: absolute;
+  background-color: var(--white-color);
+  min-height: 25.6rem;
+  width: 36rem;
+  margin: 0.8rem auto 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  border-radius: 1rem;
+  padding: 2.4rem 2.4rem 3.2rem;
+  box-shadow: 0px 20px 50px -20px #1d202680;
+}
+.cart .title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--second-color);
+  margin-bottom: 2.7rem;
+}
+.cart .divisor {
+  height: 0.1rem;
+  background-color: #e4e9f2;
+  margin-bottom: 7.7rem;
+}
+.cart .empty-cart-message {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--third-color);
+}
+.cart .divisor-product {
+  margin-bottom: 2.4rem;
+}
+.product {
+  height: 5.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+}
+.product img {
+  height: 100%;
+  border-radius: 0.4rem;
+}
+.product-title,
+.product-price {
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--third-color);
+  line-height: 2.6rem;
+}
+.product-price span {
+  font-weight: 700;
+  color: var(--second-color);
+  margin-left: 0.5rem;
+}
+.product svg:hover {
+  cursor: pointer;
+}
+.product svg:hover path {
+  fill: var(--second-color);
+}
+.cart button {
+  height: 5.6rem;
+  width: 100%;
+  color: var(--white-color);
+  font-weight: 700;
+  font-size: 1.6rem;
+  font-family: "Kumbh Sans", sans-serif;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--first-color);
+  transition: background-color 250ms ease;
+}
+.cart button:hover {
+  background-color: var(--hover-color);
+  cursor: pointer;
+}

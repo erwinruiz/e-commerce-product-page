@@ -14,16 +14,38 @@
   column-gap: 1.6rem;
   align-items: center;
 }
+.left-side svg:hover {
+  cursor: pointer;
+}
+.left-side svg:hover path {
+  fill: var(--second-color);
+}
 .header .right-side {
   display: flex;
   align-items: center;
   column-gap: 2.218rem;
+  position: relative;
 }
-.header svg:hover {
+.cart:hover {
   cursor: pointer;
 }
-.header svg:hover path {
+.cart:hover svg path {
   fill: var(--second-color);
+}
+.cart-items {
+  background-color: var(--first-color);
+  width: 1.9rem;
+  height: 1.3rem;
+  border-radius: 0.65rem;
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+}
+.cart-items p {
+  color: var(--white-color);
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
 }
 .header .avatar {
   height: 2.4rem;
@@ -32,4 +54,7 @@
 .header .avatar:hover {
   border: 0.2rem solid var(--first-color);
   border-radius: 50%;
+}
+.cart-open path {
+  fill: var(--second-color);
 }

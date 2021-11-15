@@ -24,7 +24,7 @@ function Menu({ closeMenuHandler: closeMenu }: MenuProps) {
 
   return (
     <Fragment>
-      <Backdrop isOpen={isOpen} closeMenu={closeMenuHandler} />
+      <Backdrop isOpen={isOpen} close={closeMenuHandler} needBgColor={true} />
       <SideMenu isOpen={isOpen} closeMenu={closeMenuHandler} />
     </Fragment>
   );
