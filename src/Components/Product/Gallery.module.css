@@ -1,8 +1,31 @@
 .gallery {
-  margin: 0;
+  margin: 0 auto;
   width: 100%;
   max-width: 44.5rem;
   height: 30rem;
   position: relative;
   overflow: hidden;
+}
+.thumbnail-container {
+  display: none;
+}
+.slider-desktop {
+  display: none;
+}
+@media (min-width: 1110px) {
+  .gallery {
+    height: 56.5rem;
+    width: 445.5rem;
+  }
+  .slider-mobile {
+    display: none;
+  }
+  .slider-desktop {
+    display: initial;
+  }
+  .thumbnail-container {
+    display: initial;
+    position: absolute;
+    margin-top: 47.3rem;
+  }
 }

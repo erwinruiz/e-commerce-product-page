@@ -33,6 +33,25 @@ function Header() {
             />
           </svg>
           <img src="./images/logo.svg" alt="logo" />
+          <nav className={classes.nav}>
+            <ul>
+              <li>
+                <a href="/">Collections</a>
+              </li>
+              <li>
+                <a href="/">Men</a>
+              </li>
+              <li>
+                <a href="/">Women</a>
+              </li>
+              <li>
+                <a href="/">About</a>
+              </li>
+              <li>
+                <a href="/">Contact</a>
+              </li>
+            </ul>
+          </nav>
         </div>
         <div className={classes["right-side"]}>
           {/* cart icon */}
@@ -58,8 +77,15 @@ function Header() {
             alt="user"
             className={classes.avatar}
           />
+
+          {isCartOpen && (
+            <div className={classes["cart-desktop"]}>
+              <Cart />
+            </div>
+          )}
         </div>
       </header>
+      <div className={classes.divisor}></div>
       {isSidebarMenuOpen && <Menu closeMenuHandler={menuHandler} />}
       {isCartOpen && (
         <>
@@ -68,7 +94,9 @@ function Header() {
             close={cartHandler}
             needBgColor={false}
           />
-          <Cart />
+          <div className={classes["cart-mobile"]}>
+            <Cart />
+          </div>
         </>
       )}
     </Fragment>

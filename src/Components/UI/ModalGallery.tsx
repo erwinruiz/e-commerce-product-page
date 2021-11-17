@@ -1,6 +1,7 @@
 import classes from "./ModalGallery.module.css";
 import ReactDOM from "react-dom";
 import Slider from "./Slider";
+import ThumbnailContainer from "./ThumbnailContainer";
 
 type ModalGalleryProps = {
   closeModal: () => void;
@@ -23,25 +24,10 @@ function ModalGallery({ closeModal }: ModalGalleryProps) {
         />
       </svg>
       <div className={classes["slider-container"]}>
-        <Slider />
+        <Slider needArrows={true} />
       </div>
-      <div className={classes["thumbnail-images-container"]}>
-        <div className={classes["thumbnail-image"]}>
-          <img src="./images/image-product-1-thumbnail.jpg" alt="product" />
-          <div className={classes["layer-image-1"]}></div>
-        </div>
-        <div className={classes["thumbnail-image"]}>
-          <img src="./images/image-product-2-thumbnail.jpg" alt="product" />
-          <div className={classes["layer-image-2"]}></div>
-        </div>
-        <div className={classes["thumbnail-image"]}>
-          <img src="./images/image-product-3-thumbnail.jpg" alt="product" />
-          <div className={classes["layer-image-3"]}></div>
-        </div>
-        <div className={classes["thumbnail-image"]}>
-          <img src="./images/image-product-4-thumbnail.jpg" alt="product" />
-          <div className={classes["layer-image-4"]}></div>
-        </div>
+      <div className={classes["thumbnail-container"]}>
+        <ThumbnailContainer />
       </div>
     </div>
   );

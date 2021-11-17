@@ -3,6 +3,7 @@ import { Fragment, useState } from "react";
 import Slider from "../UI/Slider";
 import Backdrop from "../UI/Backdrop";
 import ModalGallery from "../UI/ModalGallery";
+import ThumbnailContainer from "../UI/ThumbnailContainer";
 
 function Gallery() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
@@ -14,7 +15,15 @@ function Gallery() {
   return (
     <Fragment>
       <section className={classes.gallery}>
-        <Slider onClick={galleryHandler} />
+        <div className={classes["slider-mobile"]}>
+          <Slider onClick={galleryHandler} needArrows={true} />
+        </div>
+        <div className={classes["slider-desktop"]}>
+          <Slider onClick={galleryHandler} needArrows={false} />
+        </div>
+        <div className={classes["thumbnail-container"]}>
+          <ThumbnailContainer />
+        </div>
       </section>
       {isGalleryOpen && (
         <Fragment>

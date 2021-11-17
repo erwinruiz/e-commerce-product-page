@@ -3,9 +3,10 @@ import { Fragment, useRef } from "react";
 
 type SliderProps = {
   onClick?: () => void;
+  needArrows: boolean;
 };
 
-function Slider({ onClick: galleryHandler }: SliderProps) {
+function Slider({ onClick: galleryHandler, needArrows }: SliderProps) {
   const sliderRef = useRef<any>(null);
 
   const nextImageHandler = () => {
@@ -54,43 +55,54 @@ function Slider({ onClick: galleryHandler }: SliderProps) {
 
   return (
     <Fragment>
-      <div className={classes.slider} ref={sliderRef} onClick={galleryHandler}>
+      <div
+        className={`${classes.slider} ${
+          needArrows ? classes["slider-desktop-no-modal"] : ""
+        }`}
+        ref={sliderRef}
+        onClick={galleryHandler}
+      >
         <img src="./images/image-product-1.jpg" alt="product" />
         <img src="./images/image-product-2.jpg" alt="product" />
         <img src="./images/image-product-3.jpg" alt="product" />
         <img src="./images/image-product-4.jpg" alt="product" />
       </div>
-      <div className={classes.arrows}>
-        <div
-          className={classes["arrow-container"]}
-          onClick={previousImageHandler}
-        >
-          <div className={classes["arrow-previous"]}>
-            <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M11 1 3 9l8 8"
-                stroke="#1D2026"
-                strokeWidth="3"
-                fill="none"
-                fillRule="evenodd"
-              />
-            </svg>
+      {needArrows && (
+        <div className={classes.arrows}>
+          <div
+            className={classes["arrow-container"]}
+            onClick={previousImageHandler}
+          >
+            <div className={classes["arrow-previous"]}>
+              <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11 1 3 9l8 8"
+                  stroke="#1D2026"
+                  strokeWidth="3"
+                  fill="none"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
+          <div
+            className={classes["arrow-container"]}
+            onClick={nextImageHandler}
+          >
+            <div className={classes["arrow-next"]}>
+              <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m2 1 8 8-8 8"
+                  stroke="#1D2026"
+                  strokeWidth="3"
+                  fill="none"
+                  fillRule="evenodd"
+                />
+              </svg>
+            </div>
           </div>
         </div>
-        <div className={classes["arrow-container"]} onClick={nextImageHandler}>
-          <div className={classes["arrow-next"]}>
-            <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="m2 1 8 8-8 8"
-                stroke="#1D2026"
-                strokeWidth="3"
-                fill="none"
-                fillRule="evenodd"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
+      )}
     </Fragment>
   );
 }

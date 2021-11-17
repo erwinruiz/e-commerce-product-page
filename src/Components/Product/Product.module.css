@@ -2,3 +2,12 @@
   max-width: 111rem;
   margin: 0 auto;
 }
+@media (min-width: 1110px) {
+  .main {
+    display: flex;
+    align-items: center;
+    column-gap: 12.5rem;
+    margin-bottom: 13.2rem;
+    max-width: 101.5rem;
+  }
+}

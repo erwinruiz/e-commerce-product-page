@@ -76,3 +76,17 @@
   background-color: var(--hover-color);
   cursor: pointer;
 }
+
+@media (min-width: 1110px) {
+  .cart {
+    margin: 0;
+    top: 3rem;
+    left: -30rem;
+    right: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .cart {
+    left: -18rem;
+  }
+}

@@ -45,3 +45,28 @@
   align-items: center;
   justify-content: center;
 }
+
+@media (min-width: 1110px) {
+  .slider img {
+    max-height: 44.5rem;
+    max-width: 55rem;
+    border-radius: 1.5rem;
+  }
+  .slider-desktop-no-modal img {
+    max-height: 55rem;
+  }
+  .arrows {
+    max-width: 55rem;
+  }
+  .arrow-previous,
+  .arrow-next {
+    height: 5.6rem;
+    width: 5.6rem;
+  }
+  /* .arrow-previous {
+    margin-left: -4.6rem;
+  }
+  .arrow-next {
+    margin-right: -4.6rem;
+  } */
+}
