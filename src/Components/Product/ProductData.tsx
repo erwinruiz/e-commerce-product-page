@@ -1,28 +1,50 @@
 import classes from "./ProductData.module.css";
+import { useState, useContext } from "react";
+import { Context } from "../../store/context";
+import Products from "../../db/Products";
 
 function ProductData() {
+  let Product = Products.find((product) => product.id === 1);
+
+  const [items, setItems] = useState<number>(0);
+  const ctx = useContext(Context);
+
+  const addItemHandler = () => {
+    setItems((state) => state + 1);
+  };
+  const removeItemHandler = () => {
+    if (items > 0) {
+      setItems((state) => state - 1);
+    }
+  };
+
+  const addToCartHandler = () => {
+    if (items > 0) {
+      ctx.addProductToCart(Product!, items);
+    }
+  };
+
   return (
     <section className={classes.container}>
       <p className={classes.company}>Sneaker Company</p>
-      <h1 className={classes.title}>Fall Limited Edition Sneakers</h1>
-      <p className={classes.text}>
-        These low-profile sneakers are your perfect casual wear companion.
-        Featuring a durable rubber outer sole, they’ll withstand everything the
-        weather can offer.
-      </p>
+      <h1 className={classes.title}>{Product!.title}</h1>
+      <p className={classes.text}>{Product!.description}</p>
       <div className={classes.price}>
         <div className={classes.current}>
-          <p className={classes["current-price"]}>$125.00</p>
+          <p className={classes["current-price"]}>
+            ${Product!.currentprice.toFixed(2)}
+          </p>
           <div className={classes.discount}>
             <p>50%</p>
           </div>
         </div>
-        <p className={classes["old-price"]}>$250.00</p>
+        <p className={classes["old-price"]}>${Product!.oldPrice.toFixed(2)}</p>
       </div>
       <div className={classes.actions}>
         <div className={classes.controls}>
           {/* minus icon */}
           <svg
+            onClick={removeItemHandler}
             width="12"
             height="4"
             xmlns="http://www.w3.org/2000/svg"
@@ -36,9 +58,10 @@ function ProductData() {
             </defs>
             <use fill="#FF7E1B" fillRule="nonzero" xlinkHref="#a" />
           </svg>
-          <p className={classes["total-items"]}>0</p>
+          <p className={classes["total-items"]}>{items}</p>
           {/* plus icon */}
           <svg
+            onClick={addItemHandler}
             width="12"
             height="12"
             xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +76,7 @@ function ProductData() {
             <use fill="#FF7E1B" fillRule="nonzero" xlinkHref="#b" />
           </svg>
         </div>
-        <button className={classes.button}>
+        <button className={classes.button} onClick={addToCartHandler}>
           {/* cart icon */}
           <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
             <path
