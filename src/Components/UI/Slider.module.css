@@ -12,6 +12,7 @@
   max-width: 44.5rem;
   width: 100%;
   object-fit: cover;
+  flex-shrink: 0;
   /* scroll-snap-align: center; */
 }
 .arrows {

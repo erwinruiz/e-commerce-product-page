@@ -16,7 +16,7 @@ function Slider({ onClick: galleryHandler, needArrows }: SliderProps) {
       document.querySelector(".current-image")?.remove();
       const firstElement = sliderRef.current.firstChild;
       const img = document.createElement("img");
-      img.src = `/images/image-product-${selectedImage}.jpg`;
+      img.src = `./images/image-product-${selectedImage}.jpg`;
       img.alt = "product";
       img.classList.add("current-image");
       sliderRef.current.insertBefore(img, firstElement);
@@ -55,7 +55,7 @@ function Slider({ onClick: galleryHandler, needArrows }: SliderProps) {
   };
 
   const previousImageHandler = () => {
-    document.querySelector(".current-thumbnail")?.remove();
+    document.querySelector(".current-image")?.remove();
 
     // start slider
     const slideLength = sliderRef.current.children.length;

@@ -20,7 +20,7 @@
   top: 0;
   height: 100%;
   width: 100%;
-  opacity: 75%;
+  opacity: .75;
   border-radius: 1rem;
 }
 .layer-image-active {
@@ -29,7 +29,7 @@
   top: 0;
   height: 100%;
   width: 100%;
-  opacity: 75%;
+  opacity: .75;
   border-radius: 1rem;
   border: 0.2rem solid var(--first-color);
 }
