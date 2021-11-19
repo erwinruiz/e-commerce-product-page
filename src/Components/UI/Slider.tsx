@@ -1,5 +1,6 @@
 import classes from "./Slider.module.css";
-import { Fragment, useRef } from "react";
+import { Fragment, useRef, useContext, useEffect } from "react";
+import { Context } from "../../store/context";
 
 type SliderProps = {
   onClick?: () => void;
@@ -8,8 +9,24 @@ type SliderProps = {
 
 function Slider({ onClick: galleryHandler, needArrows }: SliderProps) {
   const sliderRef = useRef<any>(null);
+  const { selectedImage } = useContext(Context);
+
+  useEffect(() => {
+    if (selectedImage > 0) {
+      document.querySelector(".current-image")?.remove();
+      const firstElement = sliderRef.current.firstChild;
+      const img = document.createElement("img");
+      img.src = `/images/image-product-${selectedImage}.jpg`;
+      img.alt = "product";
+      img.classList.add("current-image");
+      sliderRef.current.insertBefore(img, firstElement);
+    }
+  }, [selectedImage]);
 
   const nextImageHandler = () => {
+    document.querySelector(".current-image")?.remove();
+
+    // start slider
     // get first element
     const firstElement = sliderRef.current.firstChild;
 
@@ -34,9 +51,13 @@ function Slider({ onClick: galleryHandler, needArrows }: SliderProps) {
     };
 
     sliderRef.current.addEventListener("transitionend", transition);
+    // end slider
   };
 
   const previousImageHandler = () => {
+    document.querySelector(".current-thumbnail")?.remove();
+
+    // start slider
     const slideLength = sliderRef.current.children.length;
     const lastElement = sliderRef.current.children[slideLength - 1];
 
@@ -51,6 +72,7 @@ function Slider({ onClick: galleryHandler, needArrows }: SliderProps) {
       sliderRef.current.style.transition = `all 300ms ease-out`;
       sliderRef.current.style.transform = `translateX(0)`;
     }, 30);
+    // end slider
   };
 
   return (

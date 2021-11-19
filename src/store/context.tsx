@@ -19,6 +19,8 @@ const Context = React.createContext({
   totalCartItems: 0,
   addProductToCart: (product: Product, totalItems: number) => {},
   removeItem: (itemId: number) => {},
+  selectImage: (imageId: number) => {},
+  selectedImage: 1,
 });
 
 type ContextProviderProps = {
@@ -28,6 +30,7 @@ type ContextProviderProps = {
 function ContextProvider({ children }: ContextProviderProps) {
   const [cartItems, setCartItems] = useState(initialState);
   const [totalCartItems, setTotalCartItems] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(0);
 
   const cartItemsHandler = (product: Product, totalItems: number) => {
     setTotalCartItems(totalItems);
@@ -35,8 +38,12 @@ function ContextProvider({ children }: ContextProviderProps) {
   };
 
   const removeItemHandler = (itemId: number) => {
-    setCartItems((state) => state.filter((prodcut) => prodcut.id !== itemId));
+    setCartItems((state) => state.filter((product) => product.id !== itemId));
     setTotalCartItems(0);
+  };
+
+  const selectImageHandler = (imageId: number) => {
+    setSelectedImage(imageId);
   };
 
   return (
@@ -46,6 +53,8 @@ function ContextProvider({ children }: ContextProviderProps) {
         totalCartItems,
         addProductToCart: cartItemsHandler,
         removeItem: removeItemHandler,
+        selectImage: selectImageHandler,
+        selectedImage,
       }}
     >
       {children}
